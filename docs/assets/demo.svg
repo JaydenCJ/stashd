@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="370" viewBox="0 0 850 370" font-family="Menlo, Consolas, monospace" font-size="12">
+  <rect width="850" height="370" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="425" y="27" fill="#8b949e" text-anchor="middle" font-size="12">stashd — a lifecycle for agent outputs</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="60"><tspan fill="#7ee787">$</tspan> stashd put --tag kind=screenshot --tag step=login login-page.png</text>
+    <text x="24" y="82"><tspan fill="#79c0ff">686be7420f06</tspan>  sha256:cb1cc104c0d8…  46.9 KiB  login-page.png  <tspan fill="#7ee787">(new blob)</tspan></text>
+    <text x="24" y="114"><tspan fill="#7ee787">$</tspan> STASHD_RUN=run-015 stashd put report.md</text>
+    <text x="24" y="136"><tspan fill="#79c0ff">3c183a1437b3</tspan>  sha256:0b272145c019…  36 B  report.md  <tspan fill="#d2a8ff">(dedup: blob already stored)</tspan></text>
+    <text x="24" y="168"><tspan fill="#7ee787">$</tspan> stashd ls --tag kind=screenshot</text>
+    <text x="24" y="190" fill="#d2a8ff">ID            SIZE      CREATED           RUN      NAME            TAGS</text>
+    <text x="24" y="212"><tspan fill="#79c0ff">686be7420f06</tspan>  46.9 KiB  2026-07-13 12:38  run-014  login-page.png  kind=screenshot,step=login</text>
+    <text x="24" y="234" fill="#8b949e">1 artifact (* = pinned)</text>
+    <text x="24" y="266"><tspan fill="#7ee787">$</tspan> stashd gc --dry-run --keep-last 1</text>
+    <text x="24" y="288"><tspan fill="#f778ba">would expire</tspan> de9774e7f2a5  report.md  [rule "cli-override"] keep_last 1 exceeded (rank 2 in group "report.md")</text>
+    <text x="24" y="310" fill="#8b949e">gc (dry-run): 1 artifact would expire, 0 blobs removed, 0 B reclaimed</text>
+    <text x="24" y="344" fill="#8b949e">content-addressed · tagged · retention-governed · offline</text>
+  </g>
+</svg>

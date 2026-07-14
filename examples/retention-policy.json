@@ -1,0 +1,7 @@
+{
+  "rules": [
+    { "name": "screenshots", "match": { "tags": { "kind": "screenshot" } }, "max_age": "72h", "keep_last": 20 },
+    { "name": "everything-else", "max_age": "30d" }
+  ],
+  "max_total_bytes": "2GiB"
+}
